@@ -1,12 +1,20 @@
 {
   "name": "logger",
   "version": "0.1.0",
-  "description": "",
+  "description": "Маленький (1kb, min), универсальный (Node/Browser), цветной (4 цвета!) логгер. Каждый экземпляр логгера обдалает своим неймспейсом и цветом.",
   "main": "logger.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balkhaev/logger.git"
+  },
   "keywords": [],
   "author": "Balkhaev",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/balkhaev/logger/issues"
+  },
+  "homepage": "https://github.com/balkhaev/logger#readme"
 }
