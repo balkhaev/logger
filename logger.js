@@ -1,4 +1,17 @@
-(function() {
+(function (root, factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD. Register as an anonymous module.
+		define([], factory);
+	} else if (typeof module === 'object' && module.exports) {
+		// Node. Does not work with strict CommonJS, but
+		// only CommonJS-like environments that support module.exports,
+		// like Node.
+		module.exports = factory();
+	} else {
+		// Browser globals (root is window)
+		root.logger = factory();
+	}
+}(this, function() {
 	var colors = {
 		browser: ['color: #1cb329', 'color: #ff0', 'color: #5454ff', 'color: #f0f'],
 		node: ['\x1b[32m%s\x1b[0m', '\x1b[33m%s\x1b[0m', '\x1b[34m%s\x1b[0m', '\x1b[35m%s\x1b[0m']
@@ -55,7 +68,5 @@
 		return logger;
 	}
 
-	if (typeof module !== 'undefined') {
-		module.exports = newLogger;
-	}
-})();
+	return newLogger
+}));
