@@ -11,7 +11,7 @@ log('Test log')
 log.error('Error log')
 ```
 
-´´´MyApp´´´´ Test log
+````MyApp```` Test log
 ```diff
-- ´´´MyApp´´´´ Error log
+- ````MyApp```` Error log
 ```
