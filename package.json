@@ -6,7 +6,7 @@
   "scripts": {
     "patch": "npm version patch && npm publish",
     "prepublish": "npm run uglify",
-    "uglify": "uglifyjs logger.js -o logger.min.js"
+    "uglify": "uglifyjs logger.js -cmo logger.min.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/balkhaev/logger#readme",
   "devDependencies": {
-    "uglifyjs": "^2.4.10"
+    "uglify-js": "^2.7.5"
   }
 }
