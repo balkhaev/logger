@@ -6,8 +6,7 @@ var colors = {
 var isBrowser = new Function('try {return this===window;}catch(e){ return false;}');
 var isNode = new Function('try {return this===global;}catch(e){ return false;}');
 
-function newLogger(loggerName, secret) {
-	secret = secret || 'ok'
+function newLogger(loggerName) {
 	var title = loggerName || 'logger'
 	var color = {
 		node: colors.node.pop(),
@@ -15,7 +14,7 @@ function newLogger(loggerName, secret) {
 	}
 
 	function isDebug() {
-		return (isBrowser() && window.location.hash.indexOf('debug=' + secret) !== -1)
+		return (isBrowser() && window.location.hash.indexOf('debug=enable') !== -1)
 			|| (isNode() && (process.env.debug === '1' || process.argv.indexOf('-d') !== -1))
 	}
 
