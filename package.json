@@ -1,10 +1,12 @@
 {
-  "name": "logger",
+  "name": "ba-logger",
   "version": "0.1.0",
   "description": "Маленький (1kb, min), универсальный (Node/Browser), цветной (4 цвета!) логгер. Каждый экземпляр логгера обдалает своим неймспейсом и цветом.",
   "main": "logger.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "patch": "npm version patch && npm publish",
+    "prepublish": "uglify",
+    "uglify": "uglifyjs logger.js -o logger.min.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/balkhaev/logger/issues"
   },
-  "homepage": "https://github.com/balkhaev/logger#readme"
+  "homepage": "https://github.com/balkhaev/logger#readme",
+  "devDependencies": {
+    "uglifyjs": "^2.4.10"
+  }
 }
