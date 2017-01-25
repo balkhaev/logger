@@ -5,7 +5,7 @@
   "main": "logger.js",
   "scripts": {
     "patch": "npm version patch && npm publish",
-    "prepublish": "uglify",
+    "prepublish": "npm run uglify",
     "uglify": "uglifyjs logger.js -o logger.min.js"
   },
   "repository": {
